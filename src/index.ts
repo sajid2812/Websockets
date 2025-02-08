@@ -7,7 +7,13 @@ app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
-const httpServer = app.listen(8080);
+app.get("/about", (req, res) => {
+  res.send("Hello from about page.");
+});
+
+const httpServer = app.listen(3000,()=>{
+  console.log('Server is listening on port 3000.')
+});
 
 const wss = new WebSocketServer({ server: httpServer });
 
